@@ -8,18 +8,19 @@ PRP -  PageRank
 
 import java.util.*;
 import java.io.*;
-import static java.lang.System.*;
 import java.text.DecimalFormat;
+import static java.lang.System.*;
+
 class pageRank_0550{
   public static void main(String[] args) throws IOException {
     DecimalFormat df = new DecimalFormat("0.0000000");
-    int initial_value = 0;
-    int iterations = 0;
-    String TextFileName = "";
+    int init_value = 0;
+    int iter = 0;
+    String textFile = "";
     int vertices = 0;
     int edges = 0;
-    int iteration_counter = 0;
-    double errorrate = 0.0;
+    int iter_counter = 0;
+    double error_rate = 0.0;
     double d = 0.85;
     boolean flag = true;
     if (args.length != 3){
@@ -27,28 +28,28 @@ class pageRank_0550{
       return;
     }
     for (int i=0;i<args.length;i++) {
-      iterations = Integer.parseInt(args[0]);
-      initial_value = Integer.parseInt(args[1]);
-      TextFileName = args[2];
+      iter = Integer.parseInt(args[0]);
+      init_value = Integer.parseInt(args[1]);
+      textFile = args[2];
     }
-    if (!(initial_value >= -2 && initial_value <= 1)){
-      System.out.println("Enter one of the following initial values : -2, -1, 0 or 1");
+    if (!(init_value >= -2 && init_value <= 1)){
+      System.out.println("Initial values can be : -2, -1, 0 or 1");
       return;
     }
-    Scanner scanner = new Scanner(new File(TextFileName));
-    vertices = scanner.nextInt();
-    edges = scanner.nextInt();
+    Scanner input = new Scanner(new File(textFile));
+    vertices = input.nextInt();
+    edges = input.nextInt();
     double graph[][] = new double[vertices][vertices];
     for(int i = 0; i < vertices; i++){
       for(int j = 0; j < vertices; j++){
             graph[i][j] = 0.0;
       }
     }
-    while(scanner.hasNextInt()){
-      graph[scanner.nextInt()][scanner.nextInt()] = 1.0;
+    while(input.hasNextInt()){
+      graph[input.nextInt()][input.nextInt()] = 1.0;
     }
-    if (iterations < 0){
-      errorrate = Math.pow(10, iterations);
+    if (iter < 0){
+      error_rate = Math.pow(10, iter);
     }
     double out_degree[] = new double[vertices];
     double initial_pgrk [] = new double[vertices];
@@ -61,7 +62,7 @@ class pageRank_0550{
       }
     }
       if (vertices < 10){
-        switch(initial_value){
+        switch(init_value){
           case 0:
           for (int i=0; i<vertices;i++){
             initial_pgrk[i] = 0.0;
@@ -85,14 +86,14 @@ class pageRank_0550{
         }
       }
       else{
-        iterations = 0;
-        initial_value = -1;
-        errorrate = 0.00001;
+        iter = 0;
+        init_value = -1;
+        error_rate = 0.00001;
         for (int i=0; i<vertices;i++){
           initial_pgrk[i] = 1.0/vertices;
         }
       }
-      System.out.print("Base: " +iteration_counter + " : ");
+      System.out.print("Base: " +iter_counter + " : ");
       if (vertices > 5){
         System.out.println();
       }
@@ -103,7 +104,7 @@ class pageRank_0550{
         }
       }
       System.out.println();
-      if(iterations > 0){
+      if(iter > 0){
         do{
           for (int j=0; j<vertices; j++){
             pgrk[j]=0.0;
@@ -115,7 +116,7 @@ class pageRank_0550{
               }
             }
           }
-          System.out.print("Iter: " + (iteration_counter+1) + " : ");
+          System.out.print("Iter: " + (iter_counter+1) + " : ");
           if (vertices > 5){
             System.out.println();
           }
@@ -130,9 +131,9 @@ class pageRank_0550{
         for (int j=0; j<vertices; j++){
           initial_pgrk[j]=pgrk[j];
         }
-        iteration_counter++;
-        iterations--;
-      } while(iterations !=0);
+        iter_counter++;
+        iter--;
+      } while(iter !=0);
     }
     else{
       do{
@@ -157,7 +158,7 @@ class pageRank_0550{
               }
             }
           }
-          System.out.print("Iter: " + (iteration_counter+1) + " : ");
+          System.out.print("Iter: " + (iter_counter+1) + " : ");
           if (vertices > 5){
             System.out.println();
           }
@@ -169,13 +170,13 @@ class pageRank_0550{
           }
         }
         System.out.println();
-        iteration_counter++;
-      } while(ConvergenceTest8699(pgrk, initial_pgrk, vertices, errorrate)!=true);
+        iter_counter++;
+      } while(ConvergenceTest0550(pgrk, initial_pgrk, vertices, error_rate)!=true);
     }
   }
-    public static boolean ConvergenceTest8699(double initial[], double previous[], int n, double errorrate){
+    public static boolean ConvergenceTest0550(double initial[], double previous[], int n, double error_rate){
        for(int i = 0 ; i < n; i++){
-        if (Math.abs(initial[i]-previous[i]) > errorrate )
+        if (Math.abs(initial[i]-previous[i]) > error_rate )
           return false;
         }
        return true;

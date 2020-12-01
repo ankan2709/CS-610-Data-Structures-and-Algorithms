@@ -1,0 +1,35 @@
+Ankan Dash 
+CS610 Data Structures and Algorithms
+NJIT ID 31520550 
+UCID ad892
+
+HANDOUT 2 ADHERED; NO BUGS TO REPORT
+
+--------------- Project 1 ---------------------
+Code compilation:
+
+g++ -std=c++0x hashtable_0550.cpp
+
+Running the program:
+
+./a.out testfile.txt
+
+No bugs to report
+
+
+--------------- Project 2 ---------------------
+Java version: openjdk version "11.0.8"
+
+Code compilation:
+
+javac hits_0550.java
+
+javac pageRank_0550.java
+
+Running the program:
+
+java hits_0550 iterations initialvalue filename
+
+java pageRank_0550 iterations initialvalue filename
+
+No bugs to report

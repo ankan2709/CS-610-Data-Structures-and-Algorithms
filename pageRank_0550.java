@@ -1,9 +1,9 @@
 /* 
-Ankan Dash 
+Ankan Dash 0550
 CS610 Data Structures and Algorithms
 NJIT ID 31520550 
 UCID ad892
-PRP -  PageRank
+Programming Project (PrP) -  Google’s PageRank algorithm
 */
 
 import java.util.*;
@@ -51,9 +51,9 @@ class pageRank_0550{
     if (iter < 0){
       error_rate = Math.pow(10, iter);
     }
+    double pgrk[] = new double[vertices];
     double out_degree[] = new double[vertices];
     double initial_pgrk [] = new double[vertices];
-    double pgrk[] = new double[vertices];
     double sub[] = new double[vertices];
     for(int i=0; i<vertices; i++){
       out_degree[i] = 0;
@@ -171,10 +171,10 @@ class pageRank_0550{
         }
         System.out.println();
         iter_counter++;
-      } while(ConvergenceTest0550(pgrk, initial_pgrk, vertices, error_rate)!=true);
+      } while(tests(pgrk, initial_pgrk, vertices, error_rate)!=true);
     }
   }
-    public static boolean ConvergenceTest0550(double initial[], double previous[], int n, double error_rate){
+    public static boolean tests(double initial[], double previous[], int n, double error_rate){
        for(int i = 0 ; i < n; i++){
         if (Math.abs(initial[i]-previous[i]) > error_rate )
           return false;

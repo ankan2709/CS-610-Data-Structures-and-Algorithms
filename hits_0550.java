@@ -1,9 +1,9 @@
 /* 
-Ankan Dash 
+Ankan Dash 0550
 CS610 Data Structures and Algorithms
 NJIT ID 31520550 
 UCID ad892
-PRP - HITS
+Programming Project (PrP) - Kleinberg’s HITS Algorithm
 */
 import java.util.*;
 import java.io.*;
@@ -58,10 +58,10 @@ class hits_0550{
     double tran_graph[][] = new double[vertices][vertices];
     double initial_auth[][] = new double[vertices][1];
     double initial_hub[][] = new double[vertices][1];
-    double scaler_auth = 0;
-    double scaler_for_hub = 0;
     double auth_prev[][] = new double [vertices][1];
     double hub_prev [][] = new double [vertices][1];
+    double scaler_auth = 0;
+    double scaler_for_hub = 0;
 
     for(int i=0;i<vertices;i++){
       for(int j=0; j<vertices; j++){
@@ -276,11 +276,11 @@ class hits_0550{
         }
         System.out.println();
         iter_counter++;
-      } while (false == ConvergenceTest0550(auth, auth_prev, vertices, error_rate) || false == ConvergenceTest0550(hub, hub_prev, vertices,error_rate));
+      } while (false == tests(auth, auth_prev, vertices, error_rate) || false == tests(hub, hub_prev, vertices,error_rate));
     }
   }
   
-  public static boolean ConvergenceTest0550(double initial[][], double previous[][], int n, double error_rate){
+  public static boolean tests(double initial[][], double previous[][], int n, double error_rate){
      for(int i = 0 ; i < n; i++){
        for (int j = 0; j < 1; j++){
          if ( Math.abs(initial[i][j] - previous[i][j]) > error_rate )

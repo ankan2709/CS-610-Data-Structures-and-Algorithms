@@ -1,11 +1,17 @@
-Ankan Dash 
-CS610 Data Structures and Algorithms
+Ankan Dash 0550
+---------------------------------------------------------
+Name Ankan Dash
+CS610 Data Structures and Algorithms - PrP
 NJIT ID 31520550 
 UCID ad892
 
-HANDOUT 2 ADHERED; NO BUGS TO REPORT
+”HANDOUT 2 and PrP ADHERED; NO BUGS TO REPORT
 
---------------- Project 1 ---------------------
+--------------- Project 1, Hashing  ---------------------
+Compiler version:
+
+gcc version 4.8.5 20150623 (Red Hat 4.8.5-44) (GCC)
+
 Code compilation:
 
 g++ -std=c++0x hashtable_0550.cpp
@@ -17,8 +23,10 @@ Running the program:
 No bugs to report
 
 
---------------- Project 2 ---------------------
-Java version: openjdk version "11.0.8"
+----- Project 2, HITS and PageRank implementations ------
+Java version:
+
+java version "14.0.2" 2020-07-14
 
 Code compilation:
 

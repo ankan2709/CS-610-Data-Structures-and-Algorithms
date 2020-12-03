@@ -5,7 +5,7 @@ CS610 Data Structures and Algorithms - PrP
 NJIT ID 31520550 
 UCID ad892
 
-”HANDOUT 2 and PrP ADHERED; NO BUGS TO REPORT
+HANDOUT 2 and PrP ADHERED; NO BUGS TO REPORT
 
 --------------- Project 1, Hashing  ---------------------
 Compiler version:

@@ -1,10 +1,12 @@
 /* 
 Ankan Dash 0550
+
 CS610 Data Structures and Algorithms
 NJIT ID 31520550 
 UCID ad892
 Programming Project (PrP) - Kleinberg’s HITS Algorithm
 */
+
 import java.util.*;
 import java.io.*;
 import java.text.DecimalFormat;
